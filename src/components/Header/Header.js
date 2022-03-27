@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
+
+import { Navigate } from './Navigate';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -22,23 +23,21 @@ function HideOnScroll(props) {
   );
 }
 
-export default function HideAppBar(props) {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar>
-          <Toolbar>
-            <Typography variant="h6" component="div">
-              Scroll to Hide App Bar
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-      <Toolbar />
-    </React.Fragment>
-  );
-}
+export const Header = (props) => (
+  <>
+    <CssBaseline />
+
+    <HideOnScroll {...props}>
+      <AppBar>
+        <Toolbar>
+          <Navigate />
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
+
+    <Toolbar />
+  </>
+);
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
