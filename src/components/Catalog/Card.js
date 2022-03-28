@@ -14,6 +14,8 @@ export const Card = ({ art, isLoadImg, setLoadImg }) => {
     if(images) {
       return images.every(image => image.addEventListener("load", () => setLoadImg(true)));
     }
+
+    return () => images.every(image => image.addEventListener("load", () => setLoadImg(true)));
   }, [setLoadImg]);
 
   return (

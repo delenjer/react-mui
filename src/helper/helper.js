@@ -1,3 +1,12 @@
+export const paginationParams = (params) => {
+  const val = Object.values(params).join(',').split('&');
+
+  return {
+    page: val[0],
+    currPages: val[1],
+  }
+}
+
 export const main = {
   width: '100%',
   minHeight: 'calc(100vh - 64px)',
