@@ -14,6 +14,7 @@ export const Details = () => {
   const [ details, setDetails ] = useState({});
   const [ isLoading, setLoading ] = useState(false);
   let { id } = useParams();
+  const path = localStorage.getItem('path') || '/';
 
   useEffect(() => {
     setLoading(true);
@@ -28,7 +29,7 @@ export const Details = () => {
   return (
     <div className="container">
       <Box component="div" mb={6}>
-        <Link to="/" className="link-back">
+        <Link to={`${path}`} className="link-back">
           <Box sx={iconBox} component="span">
             <ArrowBackIcon />
           </Box>
