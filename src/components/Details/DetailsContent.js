@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {imgBox, text} from '../../helper/helper';
+import { imgBox, text } from '../../helper/helper';
 
 export const DetailsContent = ({ detail }) => {
   if(!detail) return null;
@@ -33,4 +34,12 @@ export const DetailsContent = ({ detail }) => {
       </Box>
     </Box>
   );
+}
+
+DetailsContent.propTypes = {
+  longTitle: PropTypes.string,
+  description: PropTypes.string,
+  title: PropTypes.string,
+  webImage: PropTypes.object,
+  url: PropTypes.string,
 }

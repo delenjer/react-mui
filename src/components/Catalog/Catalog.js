@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -21,7 +21,6 @@ export const Catalog = () => {
   const pageSIze = maxPages / getItem;
   const navigate = useNavigate();
   const params = useParams();
-  const location = useLocation();
 
   useEffect( () => {
     setLoading(true);
